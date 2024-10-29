@@ -3,17 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan B</title>
+    <!-- <link rel="stylesheet" href="output.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-   <header>
-    <img src="" alt="logo">
-    <ul>
-        <input type="button" value="Login">
-        <input type="button" value="Register">
-    </ul>
-   </header> 
+    <header>
+        <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+              <img src="/img/PLAN b.png" width="50px" height="30px" alt="logo">
+              <span class="font-semibold text-xl tracking-tight">PLAN B</span>
+            </div>
+            <div class="block lg:hidden">
+              <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+              </button>
+            </div>
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+              <div class="text-sm lg:flex-grow">
+                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                  About
+                </a>
+                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+                  blog
+                </a>
+                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+                  Login
+                </a>
+              </div>
+              <div>
+                <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Register</a>
+              </div>
+            </div>
+          </nav>
+       </header> 
+   
+<section class=" mt-10 flex justify-around">
+    <button  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Add Task +</button>
 
-    
+   <div class="search border-2 flex justify-around items-center border-white rounded-lg bg-teal-500 w-2/6 ">
+     <input class="bg-teal-500 text-gray-700" type="text" placeholder="Search...">
+
+     <svg class="w-5 h-5  " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+
+   </div>
+
+    <button  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Add multiple</button>
+
+</section>
+<!-- ===todo=== -->
+<section class="grid grid-cols-3 ml-12 mt-8">
+
+   <div class="w-10/12 ">
+     <div class="todo1">
+         <h1>To do <span>3</span></h1>
+     </div>
+     <div class="todo2">
+        <p>page 5</p>
+        <button class="delete" >Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+
+
+     <div class="todo3">
+        <p>Page 4</p>
+        <button class="delete">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+
+     <div class="todo4">
+        <p>Review</p>
+        <button class="delete">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+   </div>
+
+ <!-- ====progress=== -->
+   <div class="in-progress">
+    <div class="in-progress1">
+        <h1>In progress <span>1</span></h1>
+    </div>
+
+    <div class="in-progress2">
+       <p>Page 3</p>
+       <button class="delete">Delete</button>
+        <button class="edit">Edit</button>
+    </div>
+    </div>
+
+    <!-- ===done=== -->
+
+    <div class="done">
+     <div class="done1">
+         <h1>Done <span>2</span></h1>
+     </div>
+     <div class="done2">
+        <p>Page 2</p>
+        <button class="delete">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+
+     <div class="done3">
+        <p>Page 1</p>
+        <button class="delete">Delete</button>
+        <button class="edit">Edit</button>
+      </div>
+
+
+   </div>
+
+
+</section>
 </body>
 </html>
