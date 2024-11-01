@@ -60,18 +60,23 @@
         <input id="text" class="bg-slate-300 border-gray-950 border-b-2 w-5/6" type="text"><br>
         <label for="description">description</label><br>
         <input id="description" class="h-20 bg-slate-300 border-gray-950 border-b-2 w-5/6"  type="text"><br>
+        <label for="status">Status :</label><br>
+        <select class="bg-slate-300 border-gray-950 border-b-2 w-5/6" id="status">
+          <option value="to do">To do</option>
+          <option value="in progress"> In progress</option>
+          <option value="done">Done</option>
+        </select><br>
+
         <label for="priority">Choose the priority</label><br>
-        <select class="w-15 h-8 rounded-lg bg-teal-300" name="priority" id="priority">
-          <option value="P1">P1</option>
-          <option value="P2">P2</option>
-          <option value="P3">P3</option>
+        <select  name="priority" id="priority">
+          <option class="bg-red-500" value="P1">P1</option>
+          <option class="bg-orange-500" value="P2">P2</option>
+          <option class="bg-green-600" value="P3">P3</option>
         </select>
 
         <div class="mt-2">
-          <!-- <label for="start date"> start:</label>
-          <input class="bg-slate-300 border-gray-950 border-b-2 w-4/6" type="date" id="date" name="startdate"><br> -->
           <label for="Enddate">Date d'échéance:</label>
-          <input class="mt-1 bg-slate-300 border-gray-950 border-b-2 w-4/6" type="date" id="date" name="enddate">
+          <input class="bg-slate-300 border-gray-950 border-b-2 w-5/6" type="date" id="date" name="enddate">
         </div>
         <button  id="btn" class=" mt-2 ml-20 bg-transparent hover:bg-teal-500 text-teal-300 font-mono hover:text-white py-0.2 px-4 border border-teal-300 hover:border-transparent rounded">Add</button>
       </div>
@@ -114,7 +119,7 @@
    </div>
 
  <!-- ====progress=== -->
-   <div class="w-10/12 ">
+   <div class="w-10/12 " id="INprogress">
     <div class="text-lg text-gray-800 border-b-2 border-yellow-500 ">
         <h1>In progress <span>1</span></h1>
     </div>
@@ -124,14 +129,14 @@
        <button class="bg-red-700 hover:bg-red-500 text-white pl-1 pr-1  rounded-lg">Delete</button>
         <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-mono hover:text-white py-1 px-1 border border-blue-500 hover:border-transparent rounded">Edit</button>
     </div> -->
-    <div class="box">
+    <div class="box1">
 
     </div>
     </div>
 
     <!-- ===done=== -->
 
-    <div class="w-10/12 ">
+    <div class="w-10/12 " id="Done">
      <div class="text-lg text-gray-800 border-b-2 border-blue-800 ">
          <h1>Done <span>2</span></h1>
      </div>
@@ -140,7 +145,7 @@
           <button class="bg-red-700 hover:bg-red-500 text-white pl-1 pr-1  rounded-lg">Delete</button>
           <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-mono hover:text-white py-1 px-1 border border-blue-500 hover:border-transparent rounded">Edit</button>
         </div> -->
-      <div class="box">
+      <div class="box2">
 
       </div>
 
