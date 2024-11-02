@@ -1,107 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="output.css"> -->
+    <title>To Do List</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Plan B</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script defer src="main.js"></script>
 </head>
 <body class="bg-gray-100">
-    <header>
-        <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-            <div class="flex items-center flex-shrink-0 text-white mr-6">
-              <img src="/img/PLAN b.png" width="50px" height="30px" alt="logo">
-              <span class="font-semibold text-xl tracking-tight">PLAN B</span>
+  <header>
+    <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+          <img src="/img/PLAN b.png" width="50px" height="30px" alt="logo">
+          <span class="font-semibold text-xl tracking-tight">PLAN B</span>
+        </div>
+        <div class="block lg:hidden">
+          <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+          <div class="text-sm lg:flex-grow">
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+              About
+            </a>
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+              blog
+            </a>
+            <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
+              Login
+            </a>
+          </div>
+          <div>
+            <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Register</a>
+          </div>
+        </div>
+      </nav>
+   </header> 
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold mb-8 text-center">Welcome to My PLan B: To Do List</h1>
+        <input 
+            id="searchBar" 
+            type="text" 
+            placeholder="Rechercher une tâche..." 
+            class="mb-4 border rounded w-full p-2"
+        />
+        <button id="openModal" class="mb-4 bg-teal-500 text-white px-4 py-2 rounded shadow hover:bg-green-300">Add Task</button>
+        
+        <div class="grid grid-cols-3 gap-6">
+            <div class="bg-gray-200 rounded-lg p-4">
+                <h2 class="text-xl font-bold mb-2">To Do <span id="toDoCount" class="text-gray-600">(0)</span></h2>
+                <div id="toDoList" class="space-y-4"></div>
             </div>
-            <div class="block lg:hidden">
-              <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-              </button>
+            <div class="bg-gray-200 rounded-lg p-4">
+                <h2 class="text-xl font-bold mb-2">In progress <span id="doingCount" class="text-gray-600">(0)</span></h2>
+                <div id="doingList" class="space-y-4"></div>
             </div>
-            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-              <div class="text-sm lg:flex-grow">
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                  About
-                </a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                  blog
-                </a>
-                <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-                  Login
-                </a>
-              </div>
-              <div>
-                <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Register</a>
-              </div>
+            <div class="bg-gray-200 rounded-lg p-4">
+                <h2 class="text-xl font-bold mb-2">Done <span id="doneCount" class="text-gray-600">(0)</span></h2>
+                <div id="doneList" class="space-y-4"></div>
             </div>
-          </nav>
-       </header> 
-   
-<section class="container mx-auto p-6">
-    <h1 class="text-4xl font-bold mb-8 text-center"> Welcome to My Plan B : To Do List</h1>
-    <input id="searchbar" type="text" placeholder="Searching ..." class="mb-4 rounded w-full p-3"/>
-    <button id="openlist" class="mb-4 bg-blue-500 text-white px-4 py-2 rounded shadow" >Add Task</button>
-    <div class="grid grid-cols-3 gap-6">
-      <div class="bg-gray-200 rounded-lg p-4">
-        <h2 class="text-xl font-bold mb-2">To Do <span class="text-gray-600" id="todo_count">(0)</span></h2>
-        <div id="todolist" class="space-y-4"></div>
-      </div>
-      <div class="bg-gray-200 rounded-lg p-4">
-        <h2 class="text-xl font-bold mb-2">In progress <span id="doingcount" class="text-stone-600">(0)</span></h2>
-        <div id="doinglist" class="space-y-4"></div>
-      </div>
-      <div class="bg-gray-200 rounded-lg p-4">
-        <h2 class="text-xl font-bold mb-2">Done <span id="donecount" class="text-stone-600">(0)</span></h2>
-        <div id="donelist" class="space-y-4"></div>
-      </div>
+        </div>
 
+        <div id="stats" class="text-lg mt-4">The tasks in total: <span id="taskCount">0</span></div>
+
+        <!-- Modal -->
+        <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 w-80 shadow-lg">
+                <h2 class="text-xl font-bold mb-4">New Task</h2>
+                <form id="taskForm">
+                    <label class="block mb-2">
+                        Titre:
+                        <input type="text" id="taskTitle" class="border rounded w-full p-2" required>
+                    </label>
+                    <label class="block mb-2">
+                        Description:
+                        <textarea id="taskDescription" class="border rounded w-full p-2" rows="3"></textarea>
+                    </label>
+                    <label class="block mb-2">
+                        Due Date:
+                        <input type="date" id="taskDueDate" class="border rounded w-full p-2" required>
+                    </label>
+                    <label class="block mb-2">
+                        Priority:
+                        <select id="taskPriority" class="border rounded w-full p-2">
+                            <option value="P1">P1</option>
+                            <option value="P2">P2</option>
+                            <option value="P3">P3</option>
+                        </select>
+                    </label>
+                    <label class="block mb-2">
+                        Status:
+                        <select id="taskStatus" class="border rounded w-full p-2">
+                            <option value="to do">To Do</option>
+                            <option value="doing">In progress</option>
+                            <option value="done">Done</option>
+                        </select>
+                    </label>
+                    <button type="submit" class="mt-4 bg-green-500 text-white px-4 py-2 rounded shadow">Add</button>
+                    <button type="button" id="closeModal" class="mt-2 bg-red-500 text-white px-4 py-2 rounded shadow">Regect</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <div id="static" class="text-lg mt-4">The tasks in total : <span id="taskcount"></span>(0)</div>
-
-    <!-- formulaire des taches (tasks)  -->
-     <div id="formul" class="fixed inset-0 bg-black opacity-50 flex items-center justify-center hidden">
-       <div class="bg-white rounded-lg p-6 w-80 shadow-lg">
-          <h2 class="text-xl font-bold mb-4">New Task</h2>
-          <form id="taskform">
-            <label class="block mb-2">Title :
-              <input type="text" id="tasktitle" class="border rounded w-full p-2" required>  
-            </label>
-            <label class="block mb-2">
-              Description :
-              <textarea id="taskdescription" class="border rounded w-full" rows="3"></textarea>
-            </label>
-            <label class="block mb-2">
-              Due Date :
-              <input type="date" id="taskdate" class="border rounded w-full p-2" required>
-            </label>
-            <label class="block mb-2">
-              Priorities :
-              <select name="priority" id="taskpriority" class="border rounded w-full p-2">
-                <option value="P1">P1</option>
-                <option value="P2">P2</option>
-                <option value="P3">P3</option>
-              </select>
-            </label>
-            <label class="block mb-2">
-              Statut:
-              <select id="taskstatus" class="border rounded w-full p-2">
-                <option value="to do">To Do</option>
-                <option value="doing">In progress</option>
-                <option value="done">Done</option>
-              </select>
-            </label>
-            <button type="submit" class="mt-4 bg-green-500 text-white px-4 py-2 rounded shadow"> Add </button>
-            <button type="button" id="closeformul" class="mt-2 bg-red-500 text-white px-4 py-2 rounded shadow">Regect</button>
-          </form>
-
-       </div>
-
-     </div>
-</section>
-
-<script src="main.js"></script>
 </body>
 </html>
