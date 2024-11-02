@@ -9,7 +9,7 @@
     <title>Plan B</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body style="background-image:url(/img/office-3199438_1280.jpg) ;">
+<body class="bg-gray-100">
     <header>
         <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
             <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -40,126 +40,68 @@
           </nav>
        </header> 
    
-<section class=" mt-10 flex justify-around">
-    <button  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0" id="addtask">Add Task +</button>
-
-   <div class="search border-2 flex justify-around items-center border-white rounded-lg bg-teal-500 w-2/6 ">
-     <input class="bg-teal-500 text-gray-700" type="text" placeholder="Search...">
-
-     <svg class="w-5 h-5  " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-
-   </div>
-
-    <button  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Add multiple</button>
-</section>
-<section class=" hidden bg-slate-200 w-1/4 p-4 rounded-lg  border-2 border-black" id="section" >
-    <form class="ml-8">
-      <div>
-        <label for="todo">To do "Title"</label><br>
-        <input id="text" class="bg-slate-300 border-gray-950 border-b-2 w-5/6" type="text"><br>
-        <label for="description">description</label><br>
-        <input id="description" class="h-20 bg-slate-300 border-gray-950 border-b-2 w-5/6"  type="text"><br>
-        <label for="status">Status :</label><br>
-        <select class="bg-slate-300 border-gray-950 border-b-2 w-5/6" id="status">
-          <option value="to do">To do</option>
-          <option value="in progress"> In progress</option>
-          <option value="done">Done</option>
-        </select><br>
-
-        <label for="priority">Choose the priority</label><br>
-        <select  name="priority" id="priority">
-          <option class="bg-red-500" value="P1">P1</option>
-          <option class="bg-orange-500" value="P2">P2</option>
-          <option class="bg-green-600" value="P3">P3</option>
-        </select>
-
-        <div class="mt-2">
-          <label for="Enddate">Date d'échéance:</label>
-          <input class="bg-slate-300 border-gray-950 border-b-2 w-5/6" type="date" id="date" name="enddate">
-        </div>
-        <button  id="btn" class=" mt-2 ml-20 bg-transparent hover:bg-teal-500 text-teal-300 font-mono hover:text-white py-0.2 px-4 border border-teal-300 hover:border-transparent rounded">Add</button>
+<section class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-8 text-center"> Welcome to My Plan B : To Do List</h1>
+    <input id="searchbar" type="text" placeholder="Searching ..." class="mb-4 rounded w-full p-3"/>
+    <button id="openlist" class="mb-4 bg-blue-500 text-white px-4 py-2 rounded shadow" >Add Task</button>
+    <div class="grid grid-cols-3 gap-6">
+      <div class="bg-gray-200 rounded-lg p-4">
+        <h2 class="text-xl font-bold mb-2">To Do <span class="text-gray-600" id="todo_count">(0)</span></h2>
+        <div id="todolist" class="space-y-4"></div>
       </div>
-    </form>
-</section>
-
-<!-- ===todo=== -->
-
-<section class="grid grid-cols-3 ml-12 mt-8">
-
-   <div class="w-10/12 " id="todo">
-     <div class=" text-lg border-b-2 border-red-600  ">
-         <h1>To do <span>3</span></h1>
-     </div>
-     <div class="box">
-
-     </div>
-     <!-- <div class="border-2 border-black p-3 mt-4">
-       <h2></h2>
-       <p></p>
-       <p></p>
-       <p></p>
-       
-        <button class="bg-red-700 hover:bg-red-500 text-white pl-1 pr-1  rounded-lg" >Delete</button>
-        <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-mono hover:text-white py-1 px-1 border border-blue-500 hover:border-transparent rounded">Edit</button>
-      </div> -->
-
-
-     <!-- <div class="border-2 border-black p-3 mt-4">
-        <p>Page 4</p>
-        <button class="bg-red-700 hover:bg-red-500 text-white pl-1 pr-1  rounded-lg">Delete</button>
-        <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-mono hover:text-white py-1 px-1 border border-blue-500 hover:border-transparent rounded">Edit</button>
+      <div class="bg-gray-200 rounded-lg p-4">
+        <h2 class="text-xl font-bold mb-2">In progress <span id="doingcount" class="text-stone-600">(0)</span></h2>
+        <div id="doinglist" class="space-y-4"></div>
+      </div>
+      <div class="bg-gray-200 rounded-lg p-4">
+        <h2 class="text-xl font-bold mb-2">Done <span id="donecount" class="text-stone-600">(0)</span></h2>
+        <div id="donelist" class="space-y-4"></div>
       </div>
 
-     <div class="border-2 border-black p-3 mt-4">
-        <p>Review</p>
-        <button class="bg-red-700 hover:bg-red-500 text-white pl-1 pr-1  rounded-lg">Delete</button>
-        <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-mono hover:text-white py-1 px-1 border border-blue-500 hover:border-transparent rounded">Edit</button>
-      </div> -->
-   </div>
-
- <!-- ====progress=== -->
-   <div class="w-10/12 " id="INprogress">
-    <div class="text-lg text-gray-800 border-b-2 border-yellow-500 ">
-        <h1>In progress <span>1</span></h1>
     </div>
+    <div id="static" class="text-lg mt-4">The tasks in total : <span id="taskcount"></span>(0)</div>
 
-    <!-- <div class="border-2 border-green-500 p-3 mt-4 ">
-       <p>Page 3</p>
-       <button class="bg-red-700 hover:bg-red-500 text-white pl-1 pr-1  rounded-lg">Delete</button>
-        <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-mono hover:text-white py-1 px-1 border border-blue-500 hover:border-transparent rounded">Edit</button>
-    </div> -->
-    <div class="box1">
+    <!-- formulaire des taches (tasks)  -->
+     <div id="formul" class="fixed inset-0 bg-black opacity-50 flex items-center justify-center hidden">
+       <div class="bg-white rounded-lg p-6 w-80 shadow-lg">
+          <h2 class="text-xl font-bold mb-4">New Task</h2>
+          <form id="taskform">
+            <label class="block mb-2">Title :
+              <input type="text" id="tasktitle" class="border rounded w-full p-2" required>  
+            </label>
+            <label class="block mb-2">
+              Description :
+              <textarea id="taskdescription" class="border rounded w-full" rows="3"></textarea>
+            </label>
+            <label class="block mb-2">
+              Due Date :
+              <input type="date" id="taskdate" class="border rounded w-full p-2" required>
+            </label>
+            <label class="block mb-2">
+              Priorities :
+              <select name="priority" id="taskpriority" class="border rounded w-full p-2">
+                <option value="P1">P1</option>
+                <option value="P2">P2</option>
+                <option value="P3">P3</option>
+              </select>
+            </label>
+            <label class="block mb-2">
+              Statut:
+              <select id="taskstatus" class="border rounded w-full p-2">
+                <option value="to do">To Do</option>
+                <option value="doing">In progress</option>
+                <option value="done">Done</option>
+              </select>
+            </label>
+            <button type="submit" class="mt-4 bg-green-500 text-white px-4 py-2 rounded shadow"> Add </button>
+            <button type="button" id="closeformul" class="mt-2 bg-red-500 text-white px-4 py-2 rounded shadow">Regect</button>
+          </form>
 
-    </div>
-    </div>
+       </div>
 
-    <!-- ===done=== -->
-
-    <div class="w-10/12 " id="Done">
-     <div class="text-lg text-gray-800 border-b-2 border-blue-800 ">
-         <h1>Done <span>2</span></h1>
      </div>
-      <!-- <div class="border-2 border-blue-950 p-3 mt-4 ">
-          <p>Page 2</p>
-          <button class="bg-red-700 hover:bg-red-500 text-white pl-1 pr-1  rounded-lg">Delete</button>
-          <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-mono hover:text-white py-1 px-1 border border-blue-500 hover:border-transparent rounded">Edit</button>
-        </div> -->
-      <div class="box2">
-
-      </div>
-
-     <!-- <div class="border-2 border-blue-950 p-3 mt-4">
-        <p>Page 1</p>
-        <button class="bg-red-700 hover:bg-red-500 text-white pl-1 pr-1  rounded-lg">Delete</button>
-        <button  class="bg-transparent hover:bg-blue-500 text-blue-700 font-mono hover:text-white py-1 px-1 border border-blue-500 hover:border-transparent rounded">Edit</button>
-      </div> -->
-
-
-   </div>
-
-
 </section>
+
 <script src="main.js"></script>
 </body>
 </html>
