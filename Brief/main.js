@@ -125,7 +125,7 @@ function editTask(index) {
     document.getElementById('taskDescription').value = task.description;
     document.getElementById('taskDueDate').value = task.dueDate;
     document.getElementById('taskPriority').value = task.priority;
-    document.getElementById('taskStatus').value = task.status; // Récupère le statut
+    document.getElementById('taskStatus').value = task.status; // Récupère le status
 
     currentEditIndex = index;
     openModalButton.click();
